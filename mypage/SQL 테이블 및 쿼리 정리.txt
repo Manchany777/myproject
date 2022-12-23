@@ -1,0 +1,126 @@
+MyAllInfo mypage
+마이페이지 : 구인) 아이디 / 비밀번호 / 구인구직타입 / 이름 / 나이 / 전화번호 / 생년월일 / 이메일 / 산업분류 / 회사명 / 직책
+	                id / password / type / name / age / phone / birth / email / industry / company / position
+	        구직) 아이디 / 비밀번호 / 구인구직타입 / 이름 / 전화번호 / 생년월일 / 이메일 / 희망구직 / 경력
+	                id / password / type / name / phone / birth / email / job / career
+
+SjobBoard sjobinfo
+구직글보기 : 글번호 / 아이디 / 구인구직타입 / 게시판타입 / 글 제목 / 글 내용 / 산업분류(태그) / (글 삭제버튼)
+	        postid / id / type / boardtype / title / content / industry
+
+CjobBoard cjobinfo
+구인글보기 : 글번호 / 아이디 / 구인구직타입 / 게시판타입 / 글 제목 / 글 내용 / 산업분류 / (글 삭제버튼)
+	        postid / id / type / boardtype / title / content / industry
+
+MyBoard myboardinfo
+에타글보기 : 글번호 / 아이디 / 구인구직타입 / 게시판타입 / 익명성 / 글 제목 / 글 내용 / 산업분류
+	        postid / id / type /  boardtype / anonymous / title / content / industry
+
+MyLike mylikeinfo
+좋아요 보기 : 아이디 / 게시판타입 / 글번호 /  (좋아요 해지버튼)
+	         id / boardtype / postid
+
+* type : 1 - 개인(구직)
+          2 - 회사(구인)
+
+* boardtype : 1 - sjobboard
+                 2 - cjobboard
+                 3 - myboard
+
+* anonymous : true - 익명
+                   false - 실명
+
+
+
+스키마 teamproject_gm
+
+============================================
+create table myinfo(
+	account int primary key,
+	id varchar(45) not null,
+    password varchar(45) not null,
+    type varchar(10) not null,
+    name varchar(45) not null,
+    age int check (age>=19) not null,
+    phone varchar(45),
+    birth datetime,
+    email varchar(100),
+    industry varchar(45),
+    company varchar(45),
+    position varchar(45),
+    job varchar(45),
+    career varchar(45)
+    );
+
+SELECT * FROM teamproject_gm.myinfo;
+SELECT * FROM teamproject_gm.myinfo;
+insert into myinfo values('cbk111', 'cbk1234', '1', '최병권', 33, '01028050057', '1990-01-07', 'freshguni@gmail.com', 'NULL', 'NULL', 'NULL', '백엔드', '신입');
+insert into myinfo values('cbk112', 'cbk1235', '1', '김코드', 25, '01011111111', '1997-12-23', 'kimcode@gmail.com', 'NULL', 'NULL', 'NULL', '프론트엔드', '3년차');
+insert into myinfo values('cbk113', 'cbk1236', '2', '조대리', 29, '01022222222', '1993-07-12', 'chodaeri@gmail.com', 'IT', '카카오게임', '프론트엔드', 'NULL', 'NULL');
+insert into myinfo values('cbk114', 'cbk1237', '2', '박실장', 37, '01033333333', '1985-05-22', 'parksiljang@gmail.com', 'IT', '배달의민족', '백엔드', 'NULL', 'NULL');
+insert into myinfo values('cbk115', 'cbk1238', '2', '유이사', 48, '01044444444', '1974-02-08', 'you24@gmail.com', 'IT', '구글', '백엔드', 'NULL', 'NULL');
+
+============================================
+sjobinfo(구직) / cjobinfo(구인)
+스키마 teamproject_gm
+create table sjobinfo(
+	postid int primary key,
+         id varchar(45) not null,
+        type varchar(10) not null,
+        boardtype varchar(10) not null,
+    title varchar(200) not null,
+    content varchar(1000),
+    industry varchar(45)
+    );
+
+postid / id / type / boardtype / title / content / industry
+
+SELECT * FROM teamproject_gm.sjobinfo;
+insert into sjobinfo values(null, 'cbk111', '개인', 'sjobinfo', '취업하고 싶읍니다', '뽑아만 주십시요...', 'NULL');
+insert into sjobinfo values(null, 'cbk112', '개인', 'sjobinfo', '뽑아주신다면', '코딩 야무지게 하겠습니다.', 'NULL');
+insert into sjobinfo values(null, 'cbk112', '개인', 'sjobinfo', '깃허브에 무쳤습니다.', '리드미.엠디를 읽어주십시요', 'NULL');
+글번호 / 아이디 / 구인구직타입 / 게시판타입 / 글 제목 / 글 내용 / 산업분류(팁?)
+
+SELECT * FROM teamproject_gm.cjobinfo;
+insert into cjobinfo values(null, 'cbk113', '회사', 'cjobboard', '경력 30년차 구함', '연봉은 천마원', 'IT');
+insert into cjobinfo values(null, 'cbk114', '회사', 'cjobboard', '백엔드 구함', '오늘 당장 근무하실분', 'IT');
+insert into cjobinfo values(null, 'cbk115', '회사', 'cjobboard', '네카라쿠배는 아니지만', '네카라쿠배처럼 성장할 회사에 오실 분', 'IT');
+글번호 / 아이디 / 구인구직타입 / 게시판타입 / 글 제목 / 글 내용 / 산업분류(팁?)
+
+============================================
+myboardinfo
+create table myboardinfo(
+	postid int primary key,
+        id varchar(45)  not null,
+        type varchar(10) not null,
+        boardtype varchar(10) not null,
+	anonymous boolean not null,
+    title varchar(200) not null,
+    content varchar(1000),
+    industry varchar(45)
+    );
+
+SELECT * FROM teamproject_gm.myboardinfo;
+insert into myboardinfo values(null, 'cbk112', '개인', 'myboard', true, '코딩이 너무 재밌습니다', '어찌해야 할까요', 'NULL');
+insert into myboardinfo values(null, 'cbk111', '개인', 'myboard', true, '자바 알고리즘', '파면팔구록 심오하네요', 'NULL');
+insert into myboardinfo values(null, 'cbk114', '회사', 'myboard', false, '지원자들 면접 보다보면', '병권이만한 사람이 없다는게 느껴져요', 'IT');
+글번호 / 아이디 / 구인구직타입 / 게시판타입 / 익명성 / 글 제목 / 글 내용 / 산업분류
+
+============================================
+mylikeinfo
+create table mylikeinfo(
+        account int primary key,
+        boardtype varchar(10) not null,
+	postid int not null,
+    );
+
+SELECT * FROM teamproject_gm.myinfo;
+insert into mylikeinfo values(1, 'myboard', 2);
+insert into mylikeinfo values(2, 'myboard', 1);
+insert into mylikeinfo values(3, 'myboard', 4);
+아이디 / 게시판타입 / 글번호
+
+
+
+14:23:28	insert into myboardinfo values(null, 'cbk114', '회사', 'myboard', false, '지원자들 면접 보다보면', '병권이만한 사람이 없다는게 느껴져요', null)	Error Code: 1136. Column count doesn't match value count at row 1	0.000 sec
+
