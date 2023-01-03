@@ -1,7 +1,7 @@
 import React, {useState, Component, useEffect} from 'react';
 import { Table, Button } from 'reactstrap';
 import axios from 'axios';
-import './SidebarStyle.css'
+import './MyAllInfo.css'
 
 
 function MyAllInfo(props) {
@@ -20,33 +20,50 @@ function MyAllInfo(props) {
   }, []);
 
   return (
-      <div className='myinfo' style={{textAlign:'center', borderRadius: '20px', width:'600px',
-              height:'700px', margin: '100px auto', border: '2px solid gray', padding: '40px'}}>
-            
-        <Table>
-            <tbody>
-            <tr>
-                <th>아이디</th>
-                <th>이름</th>
-                <th>전화번호</th>
-                <th>생년월일</th>
-                <th>이메일</th>
-                <th>산업분류</th>
-                <th>회사명</th>
-                <th>직책</th>
+      <div className='myinfo'>
+        <h1 className='title'>내 정보 세부보기</h1>
+        <Table className='#'>
+          <thead>
+            <tr key={myinfo.id} className='allinfohead'>
+              <th className='detailhead'>목차</th>
+              <th class='detail'>세부정보</th>
             </tr>
-                <tr key={myinfo.id}>
-                    <td>{myinfo.id}</td>
-                    <td>{myinfo.name}</td>
-                    <td>{myinfo.phone}</td>
-                    <td>{myinfo.birth}</td>
-                    <td>{myinfo.email}</td>
-                    <td>{myinfo.industry}</td>
-                    <td>{myinfo.company}</td>
-                    <td>{myinfo.position}</td>
-                    {/* <td>{type='2' && {acc.industry}}</td> */}
-                </tr>
-            </tbody>
+          </thead>
+          <tbody className='allinfobody'>
+            <tr>
+              <th scope="row">아이디</th>
+              <td class='detail'>{myinfo.id}</td>
+            </tr>
+            <tr>
+              <th scope="row">이름</th>
+              <td class='detail'>{myinfo.name}</td>
+            </tr>
+            <tr>
+              <th scope="row">전화번호</th>
+              <td class='detail'>{myinfo.phone}</td>
+            </tr>
+            <tr>
+              <th scope="row">생년월일</th>
+              <td class='detail'>{myinfo.birth}</td>
+            </tr>
+            <tr>
+              <th scope="row">이메일</th>
+              <td class='detail'>{myinfo.email}</td>
+            </tr>
+            <tr>
+              <th scope="row">산업분류</th>
+              <td class='detail'>{myinfo.industry}</td>
+            </tr>
+            <tr>
+              <th scope="row">회사명</th>
+              <td class='detail'>{myinfo.company}</td>
+            </tr>
+            <tr>
+              <th scope="row">직책</th>
+              <td class='detail'>{myinfo.position}</td>
+            </tr>
+            
+          </tbody>
         </Table>
       </div>
     );

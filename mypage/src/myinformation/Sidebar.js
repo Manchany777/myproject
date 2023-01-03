@@ -5,6 +5,13 @@ import * as AiIcons from "react-icons/ai";
 import {SidebarItem} from './SidebarItem'
 import './SidebarStyle.css'
 import { IconContext } from 'react-icons/lib';
+import styled from "styled-components";
+
+const Container = styled.div`
+  margin: 10px auto;
+  width: 370px;
+`;
+
 
 function Sidebar() {
     const [sidebar, setSidebar] = useState(false);
@@ -12,7 +19,7 @@ function Sidebar() {
     const showSidebar = () => setSidebar(!sidebar);
 
     return (
-        <>
+        <Container>
         <IconContext.Provider value={{ color: '#fff'}}>
             <div className='navbar'>
                 <Link to="/" className='menu-bars'>
@@ -41,7 +48,7 @@ function Sidebar() {
                 </ul>
             </nav>
             </IconContext.Provider>
-        </>
+        </Container>
     )
 }
 
