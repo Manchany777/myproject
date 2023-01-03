@@ -2,7 +2,7 @@ import React, {useState, Component, useEffect} from 'react';
 import { Table, Button } from 'reactstrap';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
-import './SidebarStyle.css'
+import './CjobBoard.css'
 
 
 function CjobBoard(props) {
@@ -20,32 +20,33 @@ function CjobBoard(props) {
   }, []);
 
   return (
-      <div className='myinfo' style={{textAlign:'center', borderRadius: '20px', width:'600px',
-              height:'700px', margin: '100px auto', border: '2px solid gray', padding: '40px'}}>
-            
+      <div className='myinfo2'>
+        <h1 className='title'>내가 쓴 구인글 목록</h1>      
         <Table>
-            <tbody>
-            <tr>
-                <th>글번호</th>
-                <th>아이디</th>
-                <th>구인구직타입</th>
-                <th>게시판타입</th>
-                <th>글 제목</th>
-                <th>글 내용</th>
-                <th>산업분류</th>
-            </tr>
-            {cjobinfo.map((acc) => (
-                <tr key={acc.postid}>
-                    <td>{acc.postid}</td>
-                    <td>{acc.id}</td>
-                    <td>{acc.type}</td>
-                    <td>{acc.boardtype}</td>
-                    <td><Link to={'/cjobboard/detail/'+acc.id}>{acc.title}</Link></td>
-                    <td><Link to={'/cjobboard/detail/'+acc.id}>{acc.content}</Link></td>
-                    <td>{acc.industry}</td>
-                </tr>
-            ))}
-            </tbody>
+          <thead>
+          <tr className='cjobhead'>
+              <th class='detailnum'>글번호</th>
+              {/* <th class='detailid'>아이디</th> */}
+              {/* <th>구직타입</th> */}
+              {/* <th>게시판타입</th> */}
+              <th class='detailhead'>글 제목</th>
+              {/* <th>글 내용</th> */}
+              <th class='detailindustry'>분류</th>
+          </tr>
+          </thead>
+          <tbody>
+          {cjobinfo.map((acc) => (
+              <tr key={acc.postid}>
+                  <td>{acc.postid}</td>
+                  {/* <td>{acc.id}</td> */}
+                  {/* <td>{acc.type}</td> */}
+                  {/* <td>{acc.boardtype}</td> */}
+                  <td class='detailcbody'><Link to={'/cjobboard/detail/'+acc.id}>{acc.title}</Link></td>
+                  {/* <td><Link to={'/cjobboard/detail/'+acc.id}>{acc.content}</Link></td> */}
+                  <td>{acc.industry}</td>
+              </tr>
+          ))}
+          </tbody>
         </Table>
       </div>
     );

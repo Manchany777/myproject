@@ -2,7 +2,7 @@ import React, {useState, Component, useEffect} from 'react';
 import { Table, Button } from 'reactstrap';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
-import './SidebarStyle.css'
+import './MyLike.css'
 
 
 function MyLike(props) {
@@ -20,12 +20,11 @@ function MyLike(props) {
   }, []);
 
   return (
-      <div className='myinfo' style={{textAlign:'center', borderRadius: '20px', width:'600px',
-              height:'700px', margin: '100px auto', border: '2px solid gray', padding: '40px'}}>
-            
+      <div className='myinfo4'>
+        <h1 className='title'>내가 누른 좋아요 목록</h1>          
         <Table>
             <tbody>
-            <tr>
+            <tr className='likehead'>
                 <th>아이디</th>
                 <th>글번호</th>
                 <th>게시판타입</th>
