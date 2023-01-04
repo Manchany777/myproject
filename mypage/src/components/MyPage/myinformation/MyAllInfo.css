@@ -1,8 +1,8 @@
 .title {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 18px;
-    color:rgb(245, 144, 94);
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+  color:rgb(245, 144, 94);
 }
 
 /* .myinfo {
@@ -46,5 +46,6 @@ tr td {
 }
 
 .detail {
-    text-align: center;   
+    text-align: center;  
+    padding: 13px 10px 13px 10px; 
 }

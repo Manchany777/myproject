@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Header from "../components/Common/Header";
+import HeaderMain from "../components/Common/HeaderMain";
 import StyledBox from "../components/Style/styledBox";
 import StyledContainer from "../components/Style/styledContainer";
 import CheckIdButton from "../components/Register/ChcekIdButton";
@@ -94,7 +94,7 @@ function OfficeRegister({ history }) {
   const handleSearch = (e) => {
     setShowSchoolList(true);
     setSchoolInput(e.target.value);
-    const result = SCHOOL_ARR.filter((school) => {
+    const result = industry.filter((school) => {
       return school.includes(e.target.value);
     });
     setSearchResult(result);
@@ -121,7 +121,7 @@ function OfficeRegister({ history }) {
     } else if (!userId || !userPw || !userEmail || !userNickname) {
       alert("필수 항목을 작성해주세요");
       return;
-    } else if (!SCHOOL_ARR.includes(schoolInput)) {
+    } else if (!industry.includes(schoolInput)) {
       alert("학교를 선택해주세요");
       return;
     } else if (usableId === false) {
@@ -143,7 +143,7 @@ function OfficeRegister({ history }) {
   return (
     <StyledContainer>
       <div>
-        <Header link={"./"} title="회원가입" backbutton={true} />
+        <HeaderMain link={"./"} title="회원가입" backbutton={true} />
         <StyledBox padding="18px 16px" lineHeight="20px">
           <form onSubmit={checkId}>
             <RegisterInput

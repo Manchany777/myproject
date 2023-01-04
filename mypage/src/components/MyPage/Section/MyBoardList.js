@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import axios from "axios";
 import styled from "styled-components";
-import Header from '../../Common/Header';
+import HeaderMain from '../../Common/HeaderMain';
 import AddBoard from '../../Board/Section/AddBoard';
 import StyledBox from '../../Style/styledBox';
 
@@ -36,7 +36,7 @@ function MyBoardList({history}) {
 
   return (
     <>
-      <Header title="내가 쓴 글" link="/board" backbutton={true} />
+      <HeaderMain title="내가 쓴 글" link="/board" backbutton={true} />
       {(MyBoard.length === 0) &&
         <StyledBox>
           <Warning>게시글 목록이 없습니다.</Warning>

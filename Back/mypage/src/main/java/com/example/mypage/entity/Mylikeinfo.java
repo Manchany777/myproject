@@ -21,10 +21,13 @@ import lombok.ToString;
 public class Mylikeinfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer postid;
 
     @Column
-    private Integer postid;
+    private String title;
+
+    @Column
+    private String account;
 
     @Column
     private String boardtype;

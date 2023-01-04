@@ -9,7 +9,7 @@ import CheckNickname from "./Section/CheckNickname";
 import BoardTextarea from "./Section/BoardTextarea";
 import UserProfile from "./Section/UserProfile";
 import LogoutButton from "../Common/LogoutButton";
-import Header from "../Common/Header";
+import HeaderMain from "../Common/HeaderMain";
 import Footer from "../Common/Footer";
 import { Pagination } from '@mui/material';
 
@@ -138,7 +138,7 @@ function BoardView({ history, match }) {
   };
   return (
     <>
-      <Header title="자유게시판" link="/board" />
+      <HeaderMain title="자유게시판" link="/board" />
       <StyledBox backColor="#fafafa" padding="10px 0px" lineHeight="auto">
         <Profilebox>
           <UserProfile boardPage={true} />

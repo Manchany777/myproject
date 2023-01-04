@@ -9,12 +9,14 @@ import MyPageButton from '../../Style/MyPageButton';
 import MyPageInput from '../../Style/MyPageInput';
 import MyPageTitle from '../../Style/MyPageTitle';
 
+
 const Alert = styled.p`
   color: #757575;
-  font-size: 12px;
-  font-weight: normal;
+  font-size: 11px;
+  font-weight: bold;
   line-height: 18px;
   margin-top: 16px;
+  text-align: left;
 `;
 
 function WithDrawal({history}) {
@@ -46,7 +48,7 @@ function WithDrawal({history}) {
     
   return (
     <>
-      <Header title='회원탈퇴' link="/board" backbutton={true}/>
+      <Header title='회원탈퇴' backbutton={true}/>
       <StyledBox>
         <form onSubmit={onSubmitHandler}>
           <MyPageTitle>계정 비밀번호</MyPageTitle>

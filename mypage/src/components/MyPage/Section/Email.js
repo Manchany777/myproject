@@ -8,6 +8,7 @@ import StyledBox from '../../Style/styledBox';
 import MyPageTitle from '../../Style/MyPageTitle';
 import MyPageInput from '../../Style/MyPageInput';
 import MyPageButton from '../../Style/MyPageButton';
+import HeaderSetting from '../../Common/HeaderSetting';
 
 const Textbox = styled.div`
   margin-top: 12px;
@@ -75,7 +76,7 @@ function Email({history}) {
 
   return (
     <>
-      <Header title="이메일 변경" link="/board" backbutton={true}/>
+      <HeaderSetting title="이메일 변경" link="/board" backbutton={true}/>
       <form onSubmit={onSubmitHandler}>
         <StyledBox>
           <MyPageTitle>이메일</MyPageTitle>

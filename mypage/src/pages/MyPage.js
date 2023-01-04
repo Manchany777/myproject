@@ -1,27 +1,40 @@
 import React from "react";
-import { Route, withRouter } from "react-router-dom";
-import PageList from "../components/MyPage/PageList";
-import Nickname from "../components/MyPage/Section/Nickname";
-import Email from "../components/MyPage/Section/Email";
-import Password from "../components/MyPage/Section/Password";
-import MyBoardList from "../components/MyPage/Section/MyBoardList";
-import Comment from "../components/MyPage/Section/Comment";
-import Favorite from "../components/MyPage/Section/Favorite";
-import WithDrawal from "../components/MyPage/Section/WithDrawal";
+import "../mypage/../App.css";
+import { BrowserRouter , Routes, Route, Router } from "react-router-dom";
 
-function MyPage({ match }) {
+import styled, { createGlobalStyle } from "styled-components";
+import SideNav from "../components/MyPage/SideNav";
+import Content from "../components/MyPage/Content";
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0px 250px 0 0;
+    background-color: #ffffff;
+  }
+`;
+
+const Layout = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 0;
+  color: #a7a9be;
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin: 10px auto;
+  width: 530px;
+`;
+
+function App() {
   return (
-    <>
-      <Route exact path={match.path} component={PageList} />
-      <Route path={`${match.path}/nickname`} component={Nickname} />
-      <Route path={`${match.path}/email`} component={Email} />
-      <Route path={`${match.path}/password`} component={Password} />
-      <Route path={`${match.path}/boardlist`} component={MyBoardList} />
-      <Route path={`${match.path}/comment`} component={Comment} />
-      <Route path={`${match.path}/favorite`} component={Favorite} />
-      <Route path={`${match.path}/withdrawal`} component={WithDrawal} />
-    </>
+      <Layout>
+        <GlobalStyle />
+        <SideNav />
+        <Content />
+      </Layout>
   );
 }
 
-export default withRouter(MyPage);
+
+
+  export default App;

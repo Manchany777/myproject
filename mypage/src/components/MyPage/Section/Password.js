@@ -8,6 +8,8 @@ import StyledBox from '../../Style/styledBox';
 import MyPageTitle from '../../Style/MyPageTitle';
 import MyPageInput from '../../Style/MyPageInput';
 import MyPageButton from '../../Style/MyPageButton';
+import HeaderPass from '../../Common/HeaderPass';
+
 
 const Titlebox = styled.div`
   display: flex;
@@ -81,7 +83,7 @@ function Password({history}) {
 
     return (
       <>
-        <Header title="비밀번호 변경" link="/board" backbutton={true} />
+        <HeaderPass title="비밀번호 변경" link="/board" backbutton={true} />
         <form onSubmit={onSubmitHandler}>
           <StyledBox>
             <Titlebox>
