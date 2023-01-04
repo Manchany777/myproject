@@ -8,6 +8,8 @@ import StyledBox from '../../Style/styledBox';
 import MyPageTitle from '../../Style/MyPageTitle';
 import MyPageInput from '../../Style/MyPageInput';
 import MyPageButton from '../../Style/MyPageButton';
+import HeaderSetting from '../../Common/HeaderSetting';
+
 
 const Alert = styled.p`
   color: #757575;
@@ -55,7 +57,7 @@ function Nickname({ history }) {
 
   return (
     <>
-      <Header title="닉네임 설정" link="/board" backbutton={true}/>
+      <HeaderSetting title="닉네임 설정" link="/board" backbutton={true} />
       <StyledBox lineHeight="40px">
         <form onSubmit={onSubmitHandler}>
           <MyPageTitle>닉네임</MyPageTitle>

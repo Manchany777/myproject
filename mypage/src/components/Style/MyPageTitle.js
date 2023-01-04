@@ -8,6 +8,7 @@ const Title = styled.h2`
     line-height: 24px;
     padding-left: 4px;
     margin-top: 10px;
+    text-align: left;
 `;
 
 function MyPageTitle({children}) {

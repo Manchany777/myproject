@@ -1,7 +1,14 @@
 import React from 'react';
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+// import logo from "../../assets/profile.png";
+// import logo from "../../assets/logo1.png";
+// import logo from "../../assets/logo2.png";
+// import logo from "../../assets/logo3.png";
+// import logo from "../../assets/logo4.png";
+// import logo from "../../assets/logo5.png";
+import logo from "../../assets/logo6.png";
+// import logo from "../../assets/logo7.png";
 import back from "../../assets/cancel.png";
 
 const StyledHeader = styled.div`
@@ -10,7 +17,7 @@ const StyledHeader = styled.div`
     background-color: #fff;
     width: 100%;
     height: 56px;
-    padding: 0px 8px;
+    padding: 0px 0px;
     margin-bottom: 8px;
     justify-content: space-between;
 `
@@ -19,6 +26,7 @@ const Logo = styled.img`
     height: 32px;
     vertical-align: middle;
     cursor: pointer;
+    margin-bottom: 10px;
 `
 const HeaderTitle = styled.span`
     color: #454545;

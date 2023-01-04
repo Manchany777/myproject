@@ -27,24 +27,24 @@ function MyBoard(props) {
         <Table>
           <tbody>
           <tr className='boardhead'>
-              <th class='detailnum'>글번호</th>
-              {/* <th>아이디</th> */}
-              {/* <th>구인구직타입</th> */}
-              <th class='detailboardtype'>게시판</th>
-              {/* <th class='detailanonymous'>익명성</th> */}
-              <th class='detailhead'>글 제목</th>
-              {/* <th>글 내용</th> */}
-              <th class='detailindustry'>분류</th>
+              <th>글번호</th>
+              <th>아이디</th>
+              <th>구인구직타입</th>
+              <th>게시판타입</th>
+              <th>익명성</th>
+              <th>글 제목</th>
+              <th>글 내용</th>
+              <th>산업분류</th>
           </tr>
           {myboardinfo.map((acc) => (
               <tr key={acc.postid}>
                   <td>{acc.postid}</td>
-                  {/* <td>{acc.id}</td> */}
-                  {/* <td>{acc.type}</td> */}
+                  <td>{acc.id}</td>
+                  <td>{acc.type}</td>
                   <td>{acc.boardtype}</td>
-                  {/* <td>{acc.anonymous}</td> */}
-                  <td class='detailbody'><Link to={'/everytimeboard/detail/'+acc.id}>{acc.title}</Link></td>
-                  {/* <td><Link to={'/everytimeboard/detail/'+acc.id}>{acc.content}</Link></td> */}
+                  <td>{acc.anonymous}</td>
+                  <td><Link to={'/everytimeboard/detail/'+acc.id}>{acc.title}</Link></td>
+                  <td><Link to={'/everytimeboard/detail/'+acc.id}>{acc.content}</Link></td>
                   <td>{acc.industry}</td>
               </tr>
           ))}

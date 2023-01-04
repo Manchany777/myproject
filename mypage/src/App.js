@@ -1,40 +1,33 @@
-import React from "react";
-import "./App.css";
-import { BrowserRouter , Routes, Route, Router } from "react-router-dom";
+import styled from "styled-components";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import OfficeRegister from "./pages/OfficeRegister";
+import Board from "./pages/Board";
+import BoardDetail from "./components/Board/BoardDetail";
+import MyPage from "./pages/MyPage";
+import Auth from "./hoc/auth";
 
-import styled, { createGlobalStyle } from "styled-components";
-import SideNav from "./SideNav";
-import Content from "./Content";
-
-export const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    background-color: #ffffff;
-  }
-`;
-
-const Layout = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 32px 0;
-  color: #a7a9be;
-  font-size: 0.9rem;
-  font-weight: bold;
-  font-family: sans-serif;
+const Container = styled.div`
   margin: 10px auto;
-  width: 530px;
+  width: 370px;
 `;
 
 function App() {
   return (
-      <Layout>
-        <GlobalStyle />
-        <SideNav />
-        <Content />
-      </Layout>
+    <Container>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Auth(Login, false)}></Route>
+          <Route path="/register" component={Auth(Register, false)} />
+          <Route path="/officeRegister" component={Auth(OfficeRegister, false)} />
+          <Route path="/board" component={Auth(Board, true)} />
+          <Route path="/board/:boardId" component={Auth(BoardDetail, true)} />
+          <Route path="/mypage" component={Auth(MyPage, true)} />
+        </Switch>
+      </Router>
+    </Container>
   );
 }
 
-
-
-  export default App;
+export default App;

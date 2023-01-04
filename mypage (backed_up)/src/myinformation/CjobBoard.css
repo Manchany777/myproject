@@ -1,0 +1,34 @@
+.title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.myinfo2 {
+  width: 100%;
+  max-width: 1000px;
+  height:700px auto;
+  padding: 40px 30px 70px;
+  margin: 0 auto;
+  margin-top: 70px;
+
+  text-align: center;
+  border-radius: 20px;
+  border: 2px solid rgb(205, 139, 33);
+}
+
+.cjobhead {
+  background-color: rgba(215, 96, 37, 0.2);
+}
+
+tr th {
+  font-size: 18px;
+  padding: 12px;
+  border: 1px solid #eeeeee;
+  text-align: left;
+}
+
+tr td {
+  border: 1px solid #eeeeee;
+  text-align: left;
+}

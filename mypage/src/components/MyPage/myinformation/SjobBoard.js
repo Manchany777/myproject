@@ -3,6 +3,7 @@ import { Table, Button } from 'reactstrap';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 import './SjobBoard.css'
+import HeaderBoard from '../../Common/HeaderBoard';
 
 
 function SjobBoard(props) {
@@ -21,7 +22,8 @@ function SjobBoard(props) {
 
   return (
       <div className='myinfo1'>
-        <h1 className='title'>내가 쓴 구직글 목록</h1>   
+        <HeaderBoard title="내가 쓴 구직글" />
+        {/* <h1 className='title'>내가 쓴 구직글 목록</h1>    */}
         <Table>
             <tbody>
             <tr className='sjobhead'>

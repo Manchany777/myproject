@@ -25,11 +25,11 @@ function MyAllInfo(props) {
         <Table className='#'>
           <thead>
             <tr key={myinfo.id} className='allinfohead'>
-              <th className='detailhead'>목차</th>
+              <th class='detail'>목차</th>
               <th class='detail'>세부정보</th>
             </tr>
           </thead>
-          <tbody className='allinfobody'>
+          <tbody>
             <tr>
               <th scope="row">아이디</th>
               <td class='detail'>{myinfo.id}</td>

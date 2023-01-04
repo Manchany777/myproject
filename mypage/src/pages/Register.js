@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Header from "../components/Common/Header";
+import HeaderMain from "../components/Common/HeaderMain";
 import StyledBox from "../components/Style/styledBox";
 import StyledContainer from "../components/Style/styledContainer";
 import CheckIdButton from "../components/Register/ChcekIdButton";
@@ -142,7 +142,7 @@ function Register({ history }) {
   return (
     <StyledContainer>
       <div>
-        <Header link={"./"} title="회원가입" backbutton={true} />
+        <HeaderMain link={"./"} title="회원가입" backbutton={true} />
         <StyledBox padding="18px 16px" lineHeight="20px">
           <form onSubmit={checkId}>
             <RegisterInput

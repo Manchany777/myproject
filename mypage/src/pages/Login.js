@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { loginUser } from "../_actions/user_actions";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../assets/logo.png";
+import logo from "../assets/pngwing.png";
 import LoginInput from "../components/Login/LoginInput";
 import LoginButton from "../components/Login/LoginButton";
 import StyledContainer from "../components/Style/styledContainer";

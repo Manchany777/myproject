@@ -3,6 +3,7 @@ import { Table, Button } from 'reactstrap';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 import './CjobBoard.css'
+import HeaderBoard from '../../Common/HeaderBoard';
 
 
 function CjobBoard(props) {
@@ -21,7 +22,8 @@ function CjobBoard(props) {
 
   return (
       <div className='myinfo2'>
-        <h1 className='title'>내가 쓴 구인글 목록</h1>      
+        <HeaderBoard title="내가 쓴 구인글" />
+        {/* <h1 className='title'>내가 쓴 구인글 목록</h1>       */}
         <Table>
           <thead>
           <tr className='cjobhead'>
