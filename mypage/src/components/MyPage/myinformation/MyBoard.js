@@ -29,10 +29,10 @@ function MyBoard(props) {
         <Table>
           <tbody>
           <tr className='boardhead'>
-              <th class='detailnum'>글번호</th>
+              <th class='detailnum1'>글번호</th>
               {/* <th>아이디</th> */}
               {/* <th>구인구직타입</th> */}
-              <th class='detailboardtype'>게시판</th>
+              {/* <th class='detailboardtype'>게시판</th> */}
               {/* <th class='detailanonymous'>익명성</th> */}
               <th class='detailhead'>글 제목</th>
               {/* <th>글 내용</th> */}
@@ -41,11 +41,11 @@ function MyBoard(props) {
           {myboardinfo.map((acc) => (
               <tr key={acc.postid}>
                   <td>{acc.postid}</td>
-                  {/* <td>{acc.id}</td> */}
+                  {/* <td>{acc.userid}</td> */}
                   {/* <td>{acc.type}</td> */}
-                  <td>{acc.boardtype}</td>
+                  {/* <td>{acc.type}</td> */}
                   {/* <td>{acc.anonymous}</td> */}
-                  <td class='detailbody'><Link to={'/everytimeboard/detail/'+acc.id}>{acc.title}</Link></td>
+                  <td class='detailbody'><Link to={'/everytimeboard/detail/'+acc.id}>{acc.subject}</Link></td>
                   {/* <td><Link to={'/everytimeboard/detail/'+acc.id}>{acc.content}</Link></td> */}
                   <td>{acc.industry}</td>
               </tr>

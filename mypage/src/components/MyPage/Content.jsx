@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+// Content = MyPage
 import React from "react";
 import { BrowserRouter , Routes, Route, Router, withRouter } from "react-router-dom";
 
@@ -9,10 +9,13 @@ import SjobBoard from "./myinformation/SjobBoard";
 import CjobBoard from "./myinformation/CjobBoard";
 import MyBoard from "./myinformation/MyBoard";
 import MyLike from "./myinformation/MyLike";
+
 import WithDrawal from "./Section/WithDrawal";
 import Nickname from './Section/Nickname'
 import Email from './Section/Email'
 import Password from './Section/Password'
+import Comment from "./Section/Comment";
+import Favorite from "./Section/Favorite";
 
 const Main = styled.main`
   display: block;
@@ -51,6 +54,8 @@ function Content({ match }) {
         <Route path={`${match.path}/nickname`} component={Nickname} />
         <Route path={`${match.path}/email`} component={Email} />
         <Route path={`${match.path}/password`} component={Password} />
+        <Route path={`${match.path}/comment`} component={Comment} />
+        <Route path={`${match.path}/favorite`} component={Favorite} />
         
         {/* <Route exact path='/myboardinfo' element={<MyBoard/>}/>
         <Route exact path='/mylikeinfo' element={<MyLike/>}/>

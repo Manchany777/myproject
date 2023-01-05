@@ -22,25 +22,16 @@ public class Myboardinfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer postid;
-
     @Column
-    private String id;
-
+    private String userid;
     @Column
-    private String type;
-
+    private int type;
     @Column
-    private String boardtype;
-
-    @Column
-    private boolean anonymous = true;
-
-    @Column
-    private String title;
-
-    @Column
-    private String content;
-
+    private String subject;
     @Column
     private String industry;
+    @Column
+    private String content;
+    @Column
+    private Boolean anonymous;
 }

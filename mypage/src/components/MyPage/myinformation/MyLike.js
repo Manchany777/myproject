@@ -27,14 +27,14 @@ function MyLike(props) {
         <Table>
             <tbody>
             <tr className='likehead'>
-                <th class='detailnum'>글번호</th>
-                <th class='detailhead'>글제목</th>
-                <th class='detailboardtype'>게시판</th>
+                <th class='detailnum3'>글번호</th>
+                <th class='detailhead3'>글제목</th>
+                <th class='detailboardtype3'>게시판</th>
             </tr>
             {mylikeinfo.map((acc) => (
                 <tr key={acc.postid}>
                     <td><Link to={'/'+acc.boardname+'/detail'+acc.id}>{acc.postid}</Link></td>
-                    <td class='detailbody'><Link to={'/'+acc.boardname+'/detail/'+acc.id}>{acc.title}</Link></td>
+                    <td class='detailLikebody'><Link to={'/'+acc.boardname+'/detail/'+acc.id}>{acc.title}</Link></td>
                     <td>{acc.boardtype}</td>
                 </tr>
             ))}

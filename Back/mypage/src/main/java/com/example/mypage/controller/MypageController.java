@@ -1,6 +1,8 @@
 package com.example.mypage.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.example.mypage.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +24,18 @@ public class MypageController {
     @GetMapping("/myinfo/{id}")
     public ResponseEntity<Myinfo> myInfo(@PathVariable String id) {
         System.out.println("에러 발생 여부 테스트");
-        ResponseEntity<Myinfo> res = null;
+        ResponseEntity<Myinfo> result = null;
 
         try {
             Myinfo myai = mypageService.myInfo(id);
             /* 리스트형태의 데이터 찍는 코드 */
-             res = new ResponseEntity<Myinfo>(myai, HttpStatus.OK);
+//            Map<String,Object> resultMap = new HashMap<>();
+             result = new ResponseEntity<Myinfo>(myai, HttpStatus.OK);
         } catch(Exception e) {
             e.printStackTrace();
-            res = new ResponseEntity<Myinfo>(HttpStatus.BAD_REQUEST);
+            result = new ResponseEntity<Myinfo>(HttpStatus.BAD_REQUEST);
         }
-        return res;
+        return result;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////

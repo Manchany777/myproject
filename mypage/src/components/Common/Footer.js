@@ -21,8 +21,8 @@ const Copyright = styled.span`
 function Footer() {
   return (
     <Container>
-      <Project>© 에브리타임 클론코딩</Project>
-      <Copyright> All rights reserved by Boeun, Jiyeon </Copyright>
+      <Project>© J(조인)</Project><br/>
+      <Copyright> All rights reserved by JOIN Corp. </Copyright>
     </Container>
   )
 }
