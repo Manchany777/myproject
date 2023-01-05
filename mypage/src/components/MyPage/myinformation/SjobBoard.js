@@ -31,9 +31,9 @@ function SjobBoard(props) {
                 {/* <th class='detailid'>아이디</th> */}
                 {/* <th>구인타입</th> */}
                 {/* <th>게시판타입</th> */}
-                <th class='detailhead'>글 제목</th>
+                <th class='detailhead2'>글 제목</th>
                 {/* <th>글 내용</th> */}
-                <th class='detailindustry'>분류</th>
+                <th class='detailindustry2'>분류</th>
             </tr>
             {sjobinfo.map((acc) => (
                 <tr key={acc.postid}>

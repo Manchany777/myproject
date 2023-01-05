@@ -20,7 +20,7 @@ const Profilebox = styled.div`
 `;
 const Profilebtn = styled.div`
   display: inline-block;
-  width: 64px;
+  width: 80px;
   height: 28px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -47,6 +47,7 @@ const PaginationBox = styled.div`
 `;
 
 function BoardView({ history, match }) {
+
   const userFrom = localStorage.getItem("userId");
   const writerFrom = localStorage.getItem("userNickname");
   const [totalPage, settotalPage] = useState(0);
@@ -62,7 +63,7 @@ function BoardView({ history, match }) {
 
   useEffect(() => {
     FetchBoard();
-    console.log('fetch')
+    console.log('fetch');
   }, [currentPage]);
 
   const FetchBoard = () => {
@@ -102,17 +103,21 @@ function BoardView({ history, match }) {
   };
 
   const onSubmit = (e) => {
+
     e.preventDefault();
-    if (!boardTitle) {
+    if (boardTitle === undefined || boardTitle === null || boardTitle !== "" ) {
       alert(`제목을 작성해주세요`);
       return;
-    } else if (!boardContent) {
-      alert(`내용을 작성해주세요`);
-      return;
-    } else if (boardContent.length > 300) {
-      alert(`내용을 300자 이내로 작성해주세요`);
-      return;
+    } 
+    else if (boardContent === undefined || boardContent === null || boardContent !=="") {
+      // alert(`내용을 작성해주세요`);
+      // return;
+      return alert('내용을 작성해주세요');
+    } 
+    else if (boardContent.length > 300) {
+    return alert(`내용을 300자 이내로 작성해주세요`);
     }
+    
     let variables = {
       userFrom: userFrom,
       boardTitle: boardTitle,
@@ -148,23 +153,33 @@ function BoardView({ history, match }) {
           <Profilebtn>
             <LogoutButton />
           </Profilebtn>
+          <br/>
+          <Profilebtn>
+            <Link to="/board">자유 게시판</Link>
+          </Profilebtn>
+          <Profilebtn>
+            <Link to="/officeboard">구직게시판</Link>
+          </Profilebtn>
+          <Profilebtn>
+            <Link to="/offerboard">구인게시판</Link>
+          </Profilebtn>
         </Profilebox>
         <BoardForm onSubmit={onSubmit}>
           <BoardInput
             name="boardTitle"
             placeholder="제목을 작성해주세요."
             value={boardTitle}
-            onChange={onChange}
+            onChange={e => {onChange(e)}}
           />
           <BoardTextarea
             name="boardContent"
             placeholder="여기를 눌러서 글을 작성할 수 있습니다."
             value={boardContent}
-            onChange={onChange}
+            onChange={e => {onChange(e)}}
           />
           <CheckNickname
             icon={WriterIcon}
-            click={onIconClick}
+            click={e => {onIconClick(e)}}
             submit={onSubmit}
           />
         </BoardForm>

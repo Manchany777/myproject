@@ -30,7 +30,7 @@ function MyAllInfo(props, match) {
         <Table className='#'>
           <thead>
             <tr key={myinfo.id} className='allinfohead'>
-              <th className='detailhead'>목차</th>
+              <th className='detailhead0'>목차</th>
               <th class='detail'>세부정보</th>
             </tr>
           </thead>

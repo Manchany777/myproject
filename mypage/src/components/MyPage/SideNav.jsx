@@ -2,13 +2,7 @@ import Nav from "./Nav";
 
 import LogoutButton from '../Common/LogoutButton';
 import Header from '../Common/Header';
-
-import MyAllInfo from "./myinformation/MyAllInfo";
-import SjobBoard from "./myinformation/SjobBoard";
-import CjobBoard from "./myinformation/CjobBoard";
-import MyBoard from "./myinformation/MyBoard";
-import MyLike from "./myinformation/MyLike";
-import WithDrawal from "./Section/WithDrawal";
+// SideNav = PageList
 
 function isActive(path) {
   return window.location.pathname.startsWith(path);
@@ -40,7 +34,7 @@ function SideNav() {
         </Nav.Item>
         <Nav.Item>
           <Nav.Link to="/mypage/myboardinfo" active={isActive("/myboardinfo")}>
-            작성글
+            자유글
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
